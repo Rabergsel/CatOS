@@ -43,11 +43,9 @@ namespace MOOS.GUI
             this.Height = Height;
             this.Visible = true;
             WindowManager.Windows.Add(this);
-#if Chinese
-            Title = "窗体1";
-#else
+
             Title = "Window1";
-#endif
+
             WindowManager.MoveToEnd(this);
         }
 

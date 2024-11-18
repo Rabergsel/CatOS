@@ -16,11 +16,7 @@ namespace MOOS.GUI
 
         public unsafe Calculator(int X, int Y) : base(X, Y, 270, 140)
         {
-#if Chinese
-            Title = "计算器";
-#else
             Title = "Calculator";
-#endif
             Btns = new List<Button>();
 
             image = new Image(this.Width, this.Height);

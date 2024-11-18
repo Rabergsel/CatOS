@@ -10,11 +10,8 @@ namespace MOOS.GUI
         public ImageViewer(int X, int Y) : base(X, Y, 250, 200)
         {
             image = null;
-#if Chinese
-            Title = "图片";
-#else
-            Title = "ImageViewer";
-#endif
+            Title = "Image Viewer";
+
         }
 
         public override void OnDraw()

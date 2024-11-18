@@ -11,11 +11,9 @@ namespace MOOS.GUI
 
         public Welcome(int X, int Y) : base(X, Y, 280, 225)
         {
-#if Chinese
-            this.Title = "欢迎";
-#else
+
             this.Title = "Welcome";
-#endif
+
             img = new PNG(File.ReadAllBytes("Images/Banner.png"));
         }
 
@@ -23,11 +21,7 @@ namespace MOOS.GUI
         {
             base.OnDraw();
             Framebuffer.Graphics.DrawImage(X, Y, img);
-#if Chinese
-            WindowManager.font.DrawString(X, Y + img.Height, "欢迎使用Moos(原Mosa)操作系统!\n这个项目的目标是实现一款麻雀虽小但五脏俱全的操作系统.\n源码: https://github.com/nifanfa/Moos!", Width);
-#else
-            WindowManager.font.DrawString(X, Y + img.Height, "Welcome to Moos!\nThis project is aim to show how to make asimple but powerful operating system.\nCheck out: https://github.com/nifanfa/Moos!", Width);
-#endif
+            WindowManager.font.DrawString(X, Y + img.Height, "Welcome to CatOS!\nThis project is based MOOS.\n\nThe aim is to provide a light-weight OS for all devices.\nCheck out:\nCatOS: https://github.com/Rabergsel/CatOS/\nMOOS: https://github.com/nifanfa/Moos!", Width);
         }
     }
 }

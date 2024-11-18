@@ -42,7 +42,6 @@ namespace MOOS.GUI
             AudioIcon = new PNG(File.ReadAllBytes("Images/Audio.png"));
             BuiltInAppIcon = new PNG(File.ReadAllBytes("Images/BApp.png"));
             FolderIcon = new PNG(File.ReadAllBytes("Images/folder.png"));
-            DoomIcon = new PNG(File.ReadAllBytes("Images/Doom1.png"));
             StartIcon = new PNG(File.ReadAllBytes("Images/Start.png"));
 
             Prefix = " root@CatOS: ";
@@ -114,10 +113,6 @@ namespace MOOS.GUI
                 if (names[i].Name.EndsWith(".png")||names[i].Name.EndsWith(".bmp"))
                 {
                     Framebuffer.Graphics.DrawImage(X, Y, IamgeIcon);
-                }
-                else if (names[i].Name == "DoomPortable.mue")
-                {
-                    Framebuffer.Graphics.DrawImage(X, Y, DoomIcon);
                 }
                 else if(names[i].Name.EndsWith(".nes"))
                 {
@@ -213,11 +208,7 @@ namespace MOOS.GUI
             Framebuffer.Graphics.AFillRectangle(0, Framebuffer.Height - BarHeight, Framebuffer.Width, BarHeight, 0xDD222222);
             Framebuffer.Graphics.DrawImage(12, Framebuffer.Height - BarHeight + 4, StartIcon);
 
-#if Chinese
-            string Result = $"FPS:{FPSMeter.FPS} | 处理器使用率:{ThreadPool.CPUUsage}% | 已用内存: {(Allocator.MemoryInUse / 1024)}kbytes | {RTC.Hour}:{(RTC.Minute < 10 ? "0" : "")}{RTC.Minute}";
-#else
-            string Result = $"FPS:{FPSMeter.FPS} | CPU Usage:{ThreadPool.CPUUsage}% | Used Memory: {(Allocator.MemoryInUse / 1024)}kbytes | {RTC.Hour}:{(RTC.Minute < 10 ? "0" : "")}{RTC.Minute}";
-#endif
+            string Result = $"FPS:{FPSMeter.FPS} | CPU Usage:{ThreadPool.CPUUsage}% | Used Memory: {(Allocator.MemoryInUse / 1024000)}mbytes | {RTC.Hour}:{(RTC.Minute < 10 ? "0" : "")}{RTC.Minute}:{(RTC.Second < 10 ? "0" : "")}{RTC.Second}";
             //BitFont.DrawString("Song", 0xFFFFFFFF, Result, Framebuffer.Graphics.Width - BitFont.MeasureString("Song", Result) - 16, (BarHeight / 2) - (16 / 2));
             WindowManager.font.DrawString(Framebuffer.Graphics.Width - WindowManager.font.MeasureString(Result) - WindowManager.font.FontSize, Framebuffer.Height - BarHeight + (BarHeight / 2) - (WindowManager.font.FontSize / 2), Result);
 
@@ -311,60 +302,38 @@ namespace MOOS.GUI
                 {
                     msgbox.X = itemX + 75;
                     msgbox.Y = itemY + 75;
-#if Chinese
-                msgbox.SetText("声卡不可用!");
-#else
+
                     msgbox.SetText("Audio controller is unavailable!");
-#endif
                     WindowManager.MoveToEnd(msgbox);
                     msgbox.Visible = true;
                 }
             }
-#if Chinese
-            else if (name == "计算器")
-#else
+
             else if (name == "Calculator")
-#endif
             {
                 new Calculator(300, 500);
             }
-#if Chinese
-            else if (name == "监视器")
-#else
+
             else if (name == "Monitor")
-#endif
             {
                 new Monitor(200, 450);
             }
-#if Chinese
-            else if (name == " 时钟")
-#else
             else if (name == "Clock")
-#endif
             {
                 new Clock(650, 500);
             }
-#if Chinese
-            else if (name == " 画图")
-#else
-            else if (name == "Paint")
-#endif
+
+            else if (name == "Sketcher")
             {
-                new Paint(500, 200);
+                new Sketcher(500, 200);
             }
-#if Chinese
-            else if (name == "贪吃蛇")
-#else
+
             else if (name == "Snake")
-#endif
             {
                 new Snake(600, 100);
             }
-#if Chinese
-            else if (name == "控制台")
-#else
+
             else if (name == "Console")
-#endif
             {
                 Program.FConsole.Visible = true;
             }

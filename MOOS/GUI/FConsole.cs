@@ -58,7 +58,7 @@ namespace MOOS.GUI
                     // when a command is invoked
                     switch (Cmd)
                     {
-                        case "hello":
+                        case "break":
                             int a = 1;
                             int b = 0;
                             int c = a / b;

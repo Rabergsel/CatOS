@@ -10,11 +10,7 @@ namespace MOOS.GUI
         public MessageBox(int X, int Y) : base(X, Y, 200, WindowManager.font.FontSize*2)
         {
             this._message = null;
-#if Chinese
-            this.Title = "信息框";
-#else
-            this.Title = "MessageBox";
-#endif
+            this.Title = "Info";
         }
 
         public override void OnDraw()

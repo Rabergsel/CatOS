@@ -33,8 +33,8 @@ namespace MOOS.GUI
         {
             this.Title = "System Monitor";
 
-            CPUUsage = new Chart(100, 100,"CPU");
-            RAMUsage = new Chart(100, 100,"RAM");
+            CPUUsage = new Chart(300, 300,"CPU");
+            RAMUsage = new Chart(300, 300,"RAM");
         }
 
         const int LineWidth = 5;
