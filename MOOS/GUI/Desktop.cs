@@ -44,11 +44,8 @@ namespace MOOS.GUI
             FolderIcon = new PNG(File.ReadAllBytes("Images/folder.png"));
             DoomIcon = new PNG(File.ReadAllBytes("Images/Doom1.png"));
             StartIcon = new PNG(File.ReadAllBytes("Images/Start.png"));
-#if Chinese
-            Prefix = " 管理员@Moos: ";
-#else
-            Prefix = " root@Moos: ";
-#endif
+
+            Prefix = " root@CatOS: ";
             Dir = "";
 
             imageViewer = new ImageViewer(400,400);
@@ -62,21 +59,12 @@ namespace MOOS.GUI
 
             BuiltInAppNames = new string[]
             {
-#if Chinese
-                "计算器",
-                " 时钟",
-                " 画图",
-                "贪吃蛇",
-                "控制台",
-                "监视器"
-#else
                 "Calculator",
                 "Clock",
                 "Paint",
                 "Snake",
                 "Console",
                 "Monitor"
-#endif
             };
 
             LastPoint.X = -1;
@@ -392,11 +380,8 @@ namespace MOOS.GUI
             {
                 msgbox.X = itemX + 75;
                 msgbox.Y = itemY + 75;
-#if Chinese
-                msgbox.SetText("没有程序可用打开此文件!");
-#else
                 msgbox.SetText("No application can open this file!");
-#endif
+
                 WindowManager.MoveToEnd(msgbox);
                 msgbox.Visible = true;
             }

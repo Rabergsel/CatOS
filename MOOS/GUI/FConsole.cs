@@ -15,11 +15,8 @@ namespace MOOS.GUI
 
         public FConsole(int X, int Y) : base(X, Y, 640, 320)
         {
-#if Chinese
-            Title = "控制台";
-#else
+
             Title = "Console";
-#endif
             Cmd = string.Empty;
             Data = string.Empty;
             ScreenBuf = new Image(640, 320);

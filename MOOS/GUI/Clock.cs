@@ -10,11 +10,7 @@ namespace MOOS.GUI
 
         public Clock(int X,int Y) : base(X, Y, 200, 200)
         {
-#if Chinese
-            Title = "时钟";
-#else
             Title = "Clock";
-#endif
             sine = new int[16] { 0, 27, 54, 79, 104, 128, 150, 171, 190, 201, 221, 233, 243, 250, 254, 255 };
         }
 
@@ -32,16 +28,35 @@ namespace MOOS.GUI
             DrawHand(X + (Width / 2), Y + (Height / 2), hour, Width > Height ? (Height / 6) : (Width / 6), 0xFFFFFFFF);
 
             string devider = ":";
+            
             string shour = RTC.Hour.ToString();
             string sminute = RTC.Minute.ToString();
             string ssecond = RTC.Second.ToString();
-            string result = shour + devider + sminute + devider + ssecond;
-            WindowManager.font.DrawString(X + (Width / 2) - (WindowManager.font.MeasureString(result) / 2), Y + WindowManager.font.FontSize, result);
+
+            string sCent = RTC.Century.ToString();
+            string sYear = RTC.Year.ToString();
+            string sMonth = RTC.Month.ToString();
+            string sDay = RTC.Day.ToString();
+
+
+            if (ssecond.Length < 2) { ssecond = "0" + ssecond; }
+            if (sminute.Length < 2) { sminute = "0" + sminute; }
+            if (shour.Length < 2) { shour = "0" + shour; }
+            if (sMonth.Length < 2) { sMonth = "0" + sMonth; }
+            if (sYear.Length < 2) { sYear = "0" + sYear; }
+
+            string timestring = shour + devider + sminute + devider + ssecond;
+            string datestring = sCent + sYear + "-" + sMonth + "-" + sDay;
+            
+            WindowManager.font.DrawString(X + (Width / 2) - (WindowManager.font.MeasureString(timestring) / 2), Y + WindowManager.font.FontSize, timestring);
+            WindowManager.font.DrawString(X + (Width / 2) - (WindowManager.font.MeasureString(timestring) / 2), Y + WindowManager.font.FontSize - 15, datestring);
+
+
             devider.Dispose();
             shour.Dispose();
             sminute.Dispose();
             ssecond.Dispose();
-            result.Dispose();
+            timestring.Dispose();
         }
 
         void DrawHand(int xStart, int yStart, int angle, int radius, uint color)

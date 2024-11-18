@@ -11,7 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MOOS", "MOOS\MOOS.csproj", 
 	ProjectSection(ProjectDependencies) = postProject
 		{19D564FF-D5CE-4566-9EF6-088112A4F08F} = {19D564FF-D5CE-4566-9EF6-088112A4F08F}
 		{4C81C206-F900-4CEC-B646-828A840817A6} = {4C81C206-F900-4CEC-B646-828A840817A6}
-		{A4E4E947-2D7F-4B52-98A2-1FDA9CE739E6} = {A4E4E947-2D7F-4B52-98A2-1FDA9CE739E6}
 	EndProjectSection
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Kernel", "Kernel\Kernel.shproj", "{066034BC-37FE-4605-8BDB-C525EC29DBE4}"
@@ -21,8 +20,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleOS", "ConsoleOS\Cons
 		{19D564FF-D5CE-4566-9EF6-088112A4F08F} = {19D564FF-D5CE-4566-9EF6-088112A4F08F}
 		{4C81C206-F900-4CEC-B646-828A840817A6} = {4C81C206-F900-4CEC-B646-828A840817A6}
 	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Doom", "Doom\Doom.vcxproj", "{A4E4E947-2D7F-4B52-98A2-1FDA9CE739E6}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibC", "LibC\LibC.vcxproj", "{19D564FF-D5CE-4566-9EF6-088112A4F08F}"
 EndProject
@@ -35,12 +32,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CosmosKernel1", "CosmosKern
 	EndProjectSection
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CosmosCompatible", "CosmosCompatible\CosmosCompatible.shproj", "{86E84B0F-9EDE-4F25-AD24-75B350D6CB26}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoomPortable", "DoomPortable\DoomPortable.csproj", "{3E46C530-72B4-443E-A541-BA8008049BF6}"
-	ProjectSection(ProjectDependencies) = postProject
-		{19D564FF-D5CE-4566-9EF6-088112A4F08F} = {19D564FF-D5CE-4566-9EF6-088112A4F08F}
-		{A4E4E947-2D7F-4B52-98A2-1FDA9CE739E6} = {A4E4E947-2D7F-4B52-98A2-1FDA9CE739E6}
-	EndProjectSection
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Corlib", "Corlib\Corlib.shproj", "{51E1B402-1D4F-4C9B-831C-45C8603353D5}"
 EndProject
@@ -102,18 +93,6 @@ Global
 		{479EE355-D81E-4162-AA5C-38F30C1ABDB4}.Release|x64.Build.0 = Release|Any CPU
 		{479EE355-D81E-4162-AA5C-38F30C1ABDB4}.Release|x86.ActiveCfg = Release|Any CPU
 		{479EE355-D81E-4162-AA5C-38F30C1ABDB4}.Release|x86.Build.0 = Release|Any CPU
-		{A4E4E947-2D7F-4B52-98A2-1FDA9CE739E6}.Debug|Any CPU.ActiveCfg = Debug|x64
-		{A4E4E947-2D7F-4B52-98A2-1FDA9CE739E6}.Debug|Any CPU.Build.0 = Debug|x64
-		{A4E4E947-2D7F-4B52-98A2-1FDA9CE739E6}.Debug|x64.ActiveCfg = Debug|x64
-		{A4E4E947-2D7F-4B52-98A2-1FDA9CE739E6}.Debug|x64.Build.0 = Debug|x64
-		{A4E4E947-2D7F-4B52-98A2-1FDA9CE739E6}.Debug|x86.ActiveCfg = Debug|Win32
-		{A4E4E947-2D7F-4B52-98A2-1FDA9CE739E6}.Debug|x86.Build.0 = Debug|Win32
-		{A4E4E947-2D7F-4B52-98A2-1FDA9CE739E6}.Release|Any CPU.ActiveCfg = Release|x64
-		{A4E4E947-2D7F-4B52-98A2-1FDA9CE739E6}.Release|Any CPU.Build.0 = Release|x64
-		{A4E4E947-2D7F-4B52-98A2-1FDA9CE739E6}.Release|x64.ActiveCfg = Release|x64
-		{A4E4E947-2D7F-4B52-98A2-1FDA9CE739E6}.Release|x64.Build.0 = Release|x64
-		{A4E4E947-2D7F-4B52-98A2-1FDA9CE739E6}.Release|x86.ActiveCfg = Release|Win32
-		{A4E4E947-2D7F-4B52-98A2-1FDA9CE739E6}.Release|x86.Build.0 = Release|Win32
 		{19D564FF-D5CE-4566-9EF6-088112A4F08F}.Debug|Any CPU.ActiveCfg = Debug|x64
 		{19D564FF-D5CE-4566-9EF6-088112A4F08F}.Debug|Any CPU.Build.0 = Debug|x64
 		{19D564FF-D5CE-4566-9EF6-088112A4F08F}.Debug|x64.ActiveCfg = Debug|x64
@@ -150,18 +129,6 @@ Global
 		{2D5FCE45-0D99-421F-ADDA-A248917B4E88}.Release|x64.Build.0 = Release|Any CPU
 		{2D5FCE45-0D99-421F-ADDA-A248917B4E88}.Release|x86.ActiveCfg = Release|Any CPU
 		{2D5FCE45-0D99-421F-ADDA-A248917B4E88}.Release|x86.Build.0 = Release|Any CPU
-		{3E46C530-72B4-443E-A541-BA8008049BF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3E46C530-72B4-443E-A541-BA8008049BF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3E46C530-72B4-443E-A541-BA8008049BF6}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{3E46C530-72B4-443E-A541-BA8008049BF6}.Debug|x64.Build.0 = Debug|Any CPU
-		{3E46C530-72B4-443E-A541-BA8008049BF6}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{3E46C530-72B4-443E-A541-BA8008049BF6}.Debug|x86.Build.0 = Debug|Any CPU
-		{3E46C530-72B4-443E-A541-BA8008049BF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3E46C530-72B4-443E-A541-BA8008049BF6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3E46C530-72B4-443E-A541-BA8008049BF6}.Release|x64.ActiveCfg = Release|Any CPU
-		{3E46C530-72B4-443E-A541-BA8008049BF6}.Release|x64.Build.0 = Release|Any CPU
-		{3E46C530-72B4-443E-A541-BA8008049BF6}.Release|x86.ActiveCfg = Release|Any CPU
-		{3E46C530-72B4-443E-A541-BA8008049BF6}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -176,7 +143,6 @@ Global
 		Kernel\Kernel.projitems*{2d5fce45-0d99-421f-adda-a248917b4e88}*SharedItemsImports = 5
 		Corlib\Corlib.projitems*{3880e378-077b-4f24-ad1e-9e157679c9ba}*SharedItemsImports = 5
 		Kernel\Kernel.projitems*{3880e378-077b-4f24-ad1e-9e157679c9ba}*SharedItemsImports = 5
-		Corlib\Corlib.projitems*{3e46c530-72b4-443e-a541-ba8008049bf6}*SharedItemsImports = 5
 		Corlib\Corlib.projitems*{479ee355-d81e-4162-aa5c-38f30c1abdb4}*SharedItemsImports = 5
 		Kernel\Kernel.projitems*{479ee355-d81e-4162-aa5c-38f30c1abdb4}*SharedItemsImports = 5
 		Corlib\Corlib.projitems*{4937d3a9-2f20-43ba-a794-89067f060502}*SharedItemsImports = 5

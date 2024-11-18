@@ -14,14 +14,14 @@ namespace MOOS.Misc
 
         public int NumRow => image.Width / FontSize;
 
-        public IFont(Image _img, string _charset,int size)
+        public IFont(Image _img, string _charset, int size)
         {
             image = _img;
             charset = _charset;
             FontSize = size;
         }
 
-        public int DrawChar(Graphics g,int X, int Y, char Chr)
+        public int DrawChar(Graphics g, int X, int Y, char Chr)
         {
             int index = charset.IndexOf(Chr);
             if (index == -1)
@@ -31,7 +31,7 @@ namespace MOOS.Misc
             }
 
             int baseX = 0, baseY = 0;
-            for(int i = 0; i <= index; i++)
+            for (int i = 0; i <= index; i++)
             {
                 if ((i % NumRow) == 0 && i != 0)
                 {
@@ -52,7 +52,7 @@ namespace MOOS.Misc
                         g.DrawPoint(X + w, Y + h, color, true);
                     if ((color & 0xFF000000) == 0) counter++;
                 }
-                if (w > (FontSize/3) && counter == FontSize) return w;
+                if (w > (FontSize / 3) && counter == FontSize) return w;
             }
 
             return FontSize;
@@ -64,7 +64,7 @@ namespace MOOS.Misc
             int w = 0, h = 0;
             for (int i = 0; i < Str.Length; i++)
             {
-                w += 
+                w +=
                     DrawChar(g, X + w, Y + h, Str[i]);
             }
         }
@@ -74,7 +74,7 @@ namespace MOOS.Misc
             int w = 0;
             for (int i = 0; i < Str.Length; i++)
             {
-                w += DrawChar(Framebuffer.Graphics,-1, -1, Str[i]);
+                w += DrawChar(Framebuffer.Graphics, -1, -1, Str[i]);
             }
             return w;
         }
@@ -86,7 +86,7 @@ namespace MOOS.Misc
             for (int i = 0; i < Str.Length; i++)
             {
                 if (h != 0 && w == 0 && Str[i] == ' ') continue;
-                w += DrawChar(Framebuffer.Graphics,X + w, Y + h, Str[i]);
+                w += DrawChar(Framebuffer.Graphics, X + w, Y + h, Str[i]);
                 if (w + FontSize > LineLimit && LineLimit != -1 || Str[i] == '\n')
                 {
                     w = 0;

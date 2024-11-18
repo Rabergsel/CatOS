@@ -156,10 +156,6 @@ unsafe class Program
 
         Desktop.Initialize();
 
-        Serial.WriteLine("Hello World");
-        Console.WriteLine("Hello, World!");
-        Console.WriteLine("Use Native AOT (Core RT) Technology.");
-
         //test();
 
         Audio.Initialize();
